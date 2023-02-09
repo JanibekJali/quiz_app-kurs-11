@@ -36,16 +36,17 @@ class _HomePageState extends State<HomePage> {
               actions: [
                 TextButton(
                   child: const Text("Kaira bashta"),
-                  onPressed: () {
-                    isQuiestionsFinished == false;
-                    setState(() {});
+                  onPressed:reset
+                  //  () {
+                  //   setState(() {});
 
-                    quizListUtil.suroonuAlipKel();
-                    log('restart index ===> ${quizListUtil.indextiNulKil()}');
-                    icons = [];
+                  //   quizListUtil.suroonuAlipKel();
+                  //   log('restart index ===> ${quizListUtil.restart()}');
+                  //   icons = [];
+                  //   isQuiestionsFinished == false;
 
-                    log('Kaira bashta');
-                  },
+                  //   log('Kaira bashta');
+                  // },
                 )
               ],
             )
@@ -146,7 +147,22 @@ class _HomePageState extends State<HomePage> {
 
     setState(() {});
   }
+void restart() {
+    quizListUtil.restart();
+    quizListUtil.suroonuAlipKel();
+    isQuiestionsFinished = false;
+    icons = [];
+    setState(() {});
+  }
+ void reset(){
+  quizListUtil.restart();
+  quizListUtil.suroonuAlipKel();
+  isQuiestionsFinished = false;
+  icons = [];
+  setState(() {});                  
+ }
 
+  
   List<Icon> icons = [];
 
   Icon tuuraIcon = const Icon(
