@@ -35,7 +35,7 @@ class QuizListUtil {
     _index++;
   }
 
-  indextiNulKil() {
+  restart() {
     _index = 0;
   }
 }

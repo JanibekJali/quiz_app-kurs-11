@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:quiz_app/constants/colors/app_colors.dart';
 import 'package:quiz_app/constants/text_style/app_text_style.dart';
@@ -35,32 +33,12 @@ class _HomePageState extends State<HomePage> {
               title: const Text("Suroolor buttu"),
               actions: [
                 TextButton(
-                  child: const Text("Kaira bashta"),
-                  onPressed: () {
-                    isQuiestionsFinished == false;
-                    setState(() {});
-
-                    quizListUtil.suroonuAlipKel();
-                    log('restart index ===> ${quizListUtil.indextiNulKil()}');
-                    icons = [];
-
-                    log('Kaira bashta');
-                  },
-                )
+                    onPressed: restart, child: const Text("Kaira bashta"))
               ],
             )
-          // showAlertDialog(context)
+
           // ElevatedButton(
-          //   onPressed: () {
-          // quizListUtil.restart();
-          // log('restart index ===> ${quizListUtil.restart()}');
-
-          // quizListUtil.suroonuAlipKel();
-          // isQuiestionsFinished == false;
-          // setState(() {});
-
-          // log('Kaira bashta');
-          //   },
+          //   onPressed: restart,
           //   child: const Padding(
           //     padding: EdgeInsets.all(15.0),
           //     child: Text(
@@ -130,6 +108,14 @@ class _HomePageState extends State<HomePage> {
         ]),
       ),
     );
+  }
+
+  void restart() {
+    isQuiestionsFinished = false;
+    setState(() {});
+    quizListUtil.restart();
+    quizListUtil.suroonuAlipKel();
+    icons = [];
   }
 
   void userdinJooby(bool userBasty) {
