@@ -16,6 +16,11 @@ class QuizListUtil {
       jooptor: true,
     ),
   ];
+
+  
+
+
+
   String suroonuAlipKel() {
     if (_index < suroolorJooptor.length) {
       return suroolorJooptor[_index].suroolor;
@@ -36,7 +41,7 @@ class QuizListUtil {
   }
 
   indextiNulKil() {
-    _index = 0;
+    _index == 0;
   }
 }
 
